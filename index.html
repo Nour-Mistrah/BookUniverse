@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+  <title>BookUniverse</title>
+  <link rel="icon" href="images/pageicon.png" type="image/png">
+
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet" />
+
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/book-2.png" alt="logo" />
+            <span>
+              BookUniverse
+            </span>
+          </a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav ">
+                <li class="nav-item">
+                  <a class="nav-link" href="shelf.html"> Shelf</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="favorites.html"> Favorites </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="signup.html">Account </a>
+                </li>
+                <li class="nav-item">
+                  <form id="searchForm" onsubmit="return handleSearch(event)">
+                    <input id="searchBar" type="text" placeholder="Search books..." required>
+                    <button id="searchbtn" type="submit">Search</button>
+                  </form>
+                  <script>
+                    function handleSearch(event) {
+                      event.preventDefault(); 
+                      const query = document.getElementById('searchBar').value.trim();
+                      if (query) {
+                        window.location.href = `books.html?query=${encodeURIComponent(query)}`;
+                      }
+                    }
+                  </script>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class=" slider_section ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="detail_box">
+              <h1>
+                Online <br>
+                Book <br>
+                Library
+              </h1>
+              <p>
+                Discover a world of stories with BookUniverse, your ultimate destination for online books.
+                Whether you love timeless classics, thrilling mysteries, or contemporary favorites, we have something
+                for everyone.
+                Start your reading adventure today—anytime, anywhere.
+              </p>
+              <a href="signup.html" class="">
+                Sign Up
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-6 offset-lg-1">
+            <div class="img_content">
+              <div class="img_container">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="img-box">
+                      <img src="images/bookhomepage.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Latest Releases
+        </h2>
+      </div>
+
+      <div class="service_container">
+        <div class="box">
+          <a href="books.html?id=TroubleIsland">
+            <div class="img-box">
+              <img src="images/troubleisland.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Trouble Island
+              </h5>
+              <p>
+                A gripping new novel inspired by a real place and events from the author's family,
+                Trouble Island is the standalone suspense debut from historical mystery writer Sharon Short.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=Raised">
+            <div class="img-box">
+              <img src="images/raisedByaKiller.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Raised by a Serial Killer
+              </h5>
+              <p>
+                The untold story behind the hit true crime podcast The Clearing, this unforgettable memoir traces one
+                daughter’s moving quest to understand her larger-than-life childhood as she searches for the truth about
+                her father.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=AfterTheOcean">
+            <div class="img-box">
+              <img src="images/aftertheocean.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                After the Ocean
+              </h5>
+              <p>
+                How do you find your way back when you’ve left yourself behind?
+                A painful unsolved mystery resurfaces after decades of confusion,
+                sending one woman and her daughters on a journey of redemption.
+              </p>
+            </div>
+          </a>
+        </div>
+
+  </section>
+  <section class="service_section layout_padding" style="padding-top: 0%;">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Top Rated
+        </h2>
+      </div>
+
+      <div class="service_container">
+        <div class="box">
+          <a href="books.html?id=LiveHere">
+            <div class="img-box">
+              <img src="images/weusedtolivehere.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                We Used to Live Here
+              </h5>
+              <p>
+                As a young, queer couple who flip houses,
+                Charlie and Eve can’t believe the killer deal they’ve just gotten on an old house in a picturesque
+                neighborhood.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=NuclearWar">
+            <div class="img-box">
+              <img src="images/nuclearwar.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Nuclear War: A Scenario
+              </h5>
+              <p>
+                There is only one scenario other than an asteroid strike that could end the world as we know
+                it in a matter of hours: nuclear war. And one of the triggers for that war would be a
+                nuclear missile inbound toward the United States.
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=Cold">
+            <div class="img-box">
+              <img src="images/coldcrematorium.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Cold Crematorium
+              </h5>
+              <p>
+                When József Debreczeni, a prolific Hungarian-language journalist and poet, arrived in Auschwitz in 1944,
+                his life expectancy was forty-five minutes.
+                This was how long it took for the half-dead prisoners to be sorted into groups, stripped, and sent to
+                the gas chambers.
+              </p>
+            </div>
+          </a>
+        </div>
+  </section>
+
+
+  <section class="service_section layout_padding" style="padding-top: 0%;">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Religion
+        </h2>
+      </div>
+
+      <div class="service_container">
+        <div class="box">
+          <a href="books.html?id=Quran">
+            <div class="img-box">
+              <img src="images/holyquraan.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                The Holy Quran
+              </h5>
+              <p>
+                The Holy Qur'an (also known as The Koran) is the sacred book of Islam.
+                It is the word of God whose truth was revealed to the Prophet Muhammad
+                through the angel Gabriel over a period of 23 years.
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=IslamicThoughts">
+            <div class="img-box">
+              <img src="images/FundamentalsOfIslamic.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Fundamentals of Islamic Thought
+              </h5>
+              <p>
+                This work is marked by a philosophical clarity that particularly
+                qualifies him to deal with the fundamental problems of religious thought that form the subject of this
+                book.
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=OurPhilosophy">
+            <div class="img-box">
+              <img src="images/ourphilosophy.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Our Philosophy
+              </h5>
+              <p>
+                A collection of basic notions concerning the world and our way of considering it. Divided into two
+                investigations:
+                one concerned with the theory of knowledge, and the other, with the philosophical notion of the world.
+              </p>
+            </div>
+          </a>
+        </div>
+  </section>
+
+
+  <section class="service_section layout_padding" style="padding-top: 0%;">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Politics
+        </h2>
+      </div>
+
+      <div class="service_container">
+        <div class="box">
+          <a href="books.html?id=TheColorOfLaw">
+            <div class="img-box">
+              <img src="images/thecoloroflaw.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                The Color of Law
+              </h5>
+              <p>
+                In this groundbreaking history of the modern American metropolis, Richard Rothstein, explodes the myth
+                that America’s
+                cities came to be racially divided
+                through individual prejudices, income differences, or the actions of private institutions.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=IslamicPolitical">
+            <div class="img-box">
+              <img src="images/islampolitcaltheory.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Islamic Political Theory
+              </h5>
+              <p>
+                The first of two volumes of the renowned and comprehensive text on Islamic political theory by
+                Ayatullah Misbah Yazdi, dealing with the importance of recognizing Islam as the basis of any just
+                political theory.
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=TheRepublic">
+            <div class="img-box">
+              <img src="images/therepublic.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                The Republic
+              </h5>
+              <p>
+                Presented in the form of a dialogue between Socrates and three different interlocutors,
+                this classic text is an enquiry into the notion of a perfect community and the ideal individual within
+                it.
+              </p>
+            </div>
+          </a>
+        </div>
+  </section>
+
+
+  <section class="service_section layout_padding" style="padding-top: 0%;">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Technology
+        </h2>
+      </div>
+
+      <div class="service_container">
+        <div class="box">
+          <a href="books.html?id=ChipWar">
+            <div class="img-box">
+              <img src="images/chipwar.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Chip War
+              </h5>
+              <p>
+                You may be surprised to learn that microchips are the new oil—the scarce resource on which the
+                modern world depends. Today, military, economic, and geopolitical power are built on a foundation of
+                computer chips.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=DesignPatterns">
+            <div class="img-box">
+              <img src="images/designpattern.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Design Patterns
+              </h5>
+              <p>
+                Capturing a wealth of experience about the design of object-oriented software, four top-notch designers
+                present a catalog of simple and succinct solutions to commonly occurring design problems.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=ThePragmaticProgrammer">
+            <div class="img-box">
+              <img src="images/thepragmatic.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                The Pragmatic Programmer
+              </h5>
+              <p>
+                For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers
+                examine the very essence of software development, independent of any particular language, framework, or
+                methodology.
+              </p>
+            </div>
+          </a>
+        </div>
+  </section>
+
+  <section class="authors_section layout_padding">
+    <section class="service_section service layout_padding">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Authors
+          </h2>
+        </div>
+        <div class="service_container">
+          <div class="box" style="height: 300px;">
+            <div class="img-box">
+              <img src="images/Annie-Jacobsen.jpg" class="img1" style="width: 150px; padding-top: 10%;">
+            </div>
+            <div class="detail-box">
+              <h5 style="align-content: center; padding-top: 5%;">
+                Annie Jacobsen
+              </h5>
+            </div>
+          </div>
+          <div class="box" style="height: 300px;">
+            <div class="img-box">
+              <img src="images/ShMotahari.jpg" class="img1" style="width: 130px; padding-top: 10%;">
+            </div>
+            <div class="detail-box">
+              <h5 style="align-content: center; padding-top: 5%;">
+                Sheikh Morteza Motahari
+              </h5>
+            </div>
+          </div>
+          <div class="box" style="height: 300px;">
+            <div class="img-box">
+              <img src="images/chrisMiller.jpeg" class="img1" style="width: 130px; padding-top: 10%;">
+            </div>
+            <div class="detail-box">
+              <h5 style="align-content: center; padding-top: 5%;">
+                Chris Miller
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="info_contact">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="images/location-white.png" alt="">
+            <span>
+              Lebanese University, Hadath
+            </span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <img src="images/telephone-white.png" alt="">
+            <span>
+              Call : +96103030303
+            </span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <img src="images/envelope-white.png" alt="">
+            <span>
+              bookuniverse7@gmail.com
+            </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-lg-3">
+          <div class="info_social">
+            <div>
+              <img src="images/facebook.png" alt="">
+              </a>
+            </div>
+            <div>
+              <img src="images/twitter.png" alt="">
+              </a>
+            </div>
+            <div>
+              <img src="images/instagram.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
