@@ -38,10 +38,29 @@
               BookUniverse
             </span>
           </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav ">
+                <li class="nav-item dropdown custom-dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Genres</a>
+                  <ul class="dropdown-menu custom-dropdown-menu">
+                    <li><a class="dropdown-item" href="#latestReleases">Latest Releases</a></li>
+                    <li><a class="dropdown-item" href="#topRated">Top Rated</a></li>
+                    <li><a class="dropdown-item" href="#technology">Technology</a></li>
+                    <li><a class="dropdown-item" href="#religion">Religion</a></li>
+                    <li><a class="dropdown-item" href="#politics">Politics</a></li>
+                  </ul>
+                </li>
+
                 <li class="nav-item">
                   <a class="nav-link" href="shelf.html"> Shelf</a>
                 </li>
@@ -52,17 +71,28 @@
                   <a class="nav-link" href="signup.html">Account </a>
                 </li>
                 <li class="nav-item">
-                  <form id="searchForm" onsubmit="return handleSearch(event)">
-                    <input id="searchBar" type="text" placeholder="Search books..." required>
-                    <button id="searchbtn" type="submit">Search</button>
+                  <form id="searchForm" onsubmit="return handleSearch(event)" class="search-container">
+                    <input id="searchBar" type="text" placeholder="Search" required oninput="validateInput(this)">
+                    <img id="clearBtn" src="images/clear.png" alt="Clear" onclick="clearSearch()">
                   </form>
+
                   <script>
                     function handleSearch(event) {
-                      event.preventDefault(); 
+                      event.preventDefault();
                       const query = document.getElementById('searchBar').value.trim();
                       if (query) {
                         window.location.href = `books.html?query=${encodeURIComponent(query)}`;
                       }
+                    }
+
+                    function validateInput(input) {
+                      input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Allow only letters and spaces
+                      document.getElementById('clearBtn').style.display = input.value ? 'inline' : 'none';
+                    }
+
+                    function clearSearch() {
+                      document.getElementById('searchBar').value = '';
+                      document.getElementById('clearBtn').style.display = 'none';
                     }
                   </script>
                 </li>
@@ -114,7 +144,7 @@
   </div>
 
 
-  <section class="service_section layout_padding">
+  <section class="service_section layout_padding" id="latestReleases">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -177,7 +207,7 @@
         </div>
 
   </section>
-  <section class="service_section layout_padding" style="padding-top: 0%;">
+  <section class="service_section layout_padding" style="padding-top: 0%;" id="topRated">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -241,8 +271,70 @@
         </div>
   </section>
 
+  <section class="service_section layout_padding" style="padding-top: 0%;" id="technology">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Technology
+        </h2>
+      </div>
 
-  <section class="service_section layout_padding" style="padding-top: 0%;">
+      <div class="service_container">
+        <div class="box">
+          <a href="books.html?id=ChipWar">
+            <div class="img-box">
+              <img src="images/chipwar.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Chip War
+              </h5>
+              <p>
+                You may be surprised to learn that microchips are the new oil—the scarce resource on which the
+                modern world depends. Today, military, economic, and geopolitical power are built on a foundation of
+                computer chips.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=DesignPatterns">
+            <div class="img-box">
+              <img src="images/designpattern.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Design Patterns
+              </h5>
+              <p>
+                Capturing a wealth of experience about the design of object-oriented software, four top-notch designers
+                present a catalog of simple and succinct solutions to commonly occurring design problems.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="books.html?id=ThePragmaticProgrammer">
+            <div class="img-box">
+              <img src="images/thepragmatic.jpg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                The Pragmatic Programmer
+              </h5>
+              <p>
+                For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers
+                examine the very essence of software development, independent of any particular language, framework, or
+                methodology.
+              </p>
+            </div>
+          </a>
+        </div>
+  </section>
+
+  <section class="service_section layout_padding" style="padding-top: 0%;" id="religion">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -305,7 +397,7 @@
   </section>
 
 
-  <section class="service_section layout_padding" style="padding-top: 0%;">
+  <section class="service_section layout_padding" style="padding-top: 0%;" id="politics">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -369,111 +461,53 @@
         </div>
   </section>
 
-
-  <section class="service_section layout_padding" style="padding-top: 0%;">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Technology
-        </h2>
-      </div>
-
-      <div class="service_container">
-        <div class="box">
-          <a href="books.html?id=ChipWar">
-            <div class="img-box">
-              <img src="images/chipwar.jpg" class="img1" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Chip War
-              </h5>
-              <p>
-                You may be surprised to learn that microchips are the new oil—the scarce resource on which the
-                modern world depends. Today, military, economic, and geopolitical power are built on a foundation of
-                computer chips.
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="books.html?id=DesignPatterns">
-            <div class="img-box">
-              <img src="images/designpattern.jpg" class="img1" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Design Patterns
-              </h5>
-              <p>
-                Capturing a wealth of experience about the design of object-oriented software, four top-notch designers
-                present a catalog of simple and succinct solutions to commonly occurring design problems.
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="books.html?id=ThePragmaticProgrammer">
-            <div class="img-box">
-              <img src="images/thepragmatic.jpg" class="img1" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                The Pragmatic Programmer
-              </h5>
-              <p>
-                For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers
-                examine the very essence of software development, independent of any particular language, framework, or
-                methodology.
-              </p>
-            </div>
-          </a>
-        </div>
-  </section>
-
   <section class="authors_section layout_padding">
     <section class="service_section service layout_padding">
       <div class="container">
         <div class="heading_container">
-          <h2>
-            Authors
-          </h2>
+          <h2>Authors</h2>
         </div>
         <div class="service_container">
-          <div class="box" style="height: 300px;">
+          <div class="box" onclick="expandBox(this)">
             <div class="img-box">
-              <img src="images/Annie-Jacobsen.jpg" class="img1" style="width: 150px; padding-top: 10%;">
+              <img src="images/Annie-Jacobsen.jpg" class="img1" alt="Annie Jacobsen">
             </div>
             <div class="detail-box">
-              <h5 style="align-content: center; padding-top: 5%;">
-                Annie Jacobsen
-              </h5>
+              <h5>Annie Jacobsen</h5>
+              <div class="extra-info">
+                <p>An investigative journalist and author specializing in military and intelligence topics.
+                  Known for books like "Area 51" and "Operation Paperclip," she unveils hidden stories of history
+                  and technology. Pulitzer Prize finalist for "The Pentagon's Brain."</p>
+              </div>
             </div>
           </div>
-          <div class="box" style="height: 300px;">
+          <div class="box" onclick="expandBox(this)">
             <div class="img-box">
-              <img src="images/ShMotahari.jpg" class="img1" style="width: 130px; padding-top: 10%;">
+              <img src="images/ShMotahari.jpg" class="img1">
             </div>
             <div class="detail-box">
-              <h5 style="align-content: center; padding-top: 5%;">
-                Sheikh Morteza Motahari
-              </h5>
+              <h5>Sheikh Morteza Motahari</h5>
+              <div class="extra-info">
+                <p>An influential Iranian philosopher, theologian, and scholar. A key figure in shaping modern Islamic
+                  thought, he wrote extensively on philosophy, ethics, and social justice. His works continue to
+                  inspire discussions on Islamic ideology and governance.</p>
+              </div>
             </div>
           </div>
-          <div class="box" style="height: 300px;">
+          <div class="box" onclick="expandBox(this)">
             <div class="img-box">
-              <img src="images/chrisMiller.jpeg" class="img1" style="width: 130px; padding-top: 10%;">
+              <img src="images/chrisMiller.jpeg" class="img1">
             </div>
             <div class="detail-box">
-              <h5 style="align-content: center; padding-top: 5%;">
-                Chris Miller
-              </h5>
+              <h5>Chris Miller</h5>
+              <div class="extra-info">
+                <p>A geopolitical expert and historian specializing in international affairs and technology.
+                  Author of Chip War, which explores the global battle for semiconductor dominance.
+                  His research delves into the intersection of economics, security, and technological power.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
   </section>
 
@@ -524,6 +558,36 @@
       </div>
     </div>
   </section>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <script>
+    function expandBox(selectedBox) {
+      let allBoxes = document.querySelectorAll('.box');
+
+      allBoxes.forEach(box => {
+        if (box !== selectedBox) {
+          box.classList.add('hidden');
+        } else {
+          box.classList.add('expanded');
+        }
+      });
+
+      // Clicking again resets everything
+      selectedBox.onclick = function () {
+        allBoxes.forEach(box => {
+          box.classList.remove('expanded', 'hidden');
+        });
+
+        selectedBox.onclick = () => expandBox(selectedBox);
+      };
+    }
+
+  </script>
+
 </body>
 
 </html>
