@@ -143,6 +143,57 @@ a:focus {
           align-items: flex-end;
 }
 
+.custom_nav-container .navbar-toggler {
+  outline: none;
+}
+
+.custom_nav-container .navbar-toggler {
+  padding: 0;
+  width: 37px;
+  height: 42px;
+}
+
+.custom_nav-container .navbar-toggler span {
+  display: block;
+  width: 35px;
+  height: 4px;
+  background-color: #190734;
+  margin: 7px 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] .s-1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin: 0;
+  margin-bottom: -4px;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] .s-2 {
+  display: none;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] .s-3 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin: 0;
+  margin-top: -4px;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="false"] .s-1,
+.custom_nav-container .navbar-toggler[aria-expanded="false"] .s-2,
+.custom_nav-container .navbar-toggler[aria-expanded="false"] .s-3 {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
 
 .dropdown-menu{
   position: absolute;
@@ -155,25 +206,38 @@ a:focus {
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-#searchBar {
+.search-container {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#searchBar {
   margin-left: 20px;
   margin-top: 10px;
   padding: 5px 10px;
   border-radius: 35px;
   background-color: #eae6f5;
-  border-color: #4b208c;
+  border: 2px solid #4b208c;
+  width: 95px;
+  transition: width 0.3s ease-in-out;
+  font-size: 14px;
 }
 
-#searchbtn{
-  color: #ddd;
-  position: relative;
-  padding: 5px 10px;
-  margin: 0px;
-  border-radius: 35px;
-  background-color: #4b208c;
-  
+#searchBar:focus {
+  width: 200px;
 }
+
+#clearBtn {
+  margin-top: 7px;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  display: none;
+  width: 16px;
+  height: 16px;
+}
+
 .slider_section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -333,23 +397,91 @@ a:focus {
   border-radius: 35px;
 }
 
-.service_section .btn-box a:hover {
-  background-color: #5625a1;
-}
-
-.authors_section {
+.authors_section{
   background-color: #eae6f5;
 }
+.authors_section .service_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
 
-.authors_section .img_container .img-box {
-  border: 5px solid #7b57b2;
-  border-radius: 100%;
+.authors_section .box {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  flex-shrink: 0;
 }
 
-.authors_section .detail-box a:hover {
-  background-color: #5625a1;
+.authors_section .box:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.authors_section .box .image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.authors_section .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authors_section .box h5 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.authors_section .box .extra-info {
+  display: none; /* Initially hidden */
+}
+
+.authors_section .box.expanded {
+  flex-grow: 0.8; /* Allow the expanded box to fill available space */
+  display: flex;
+  flex-direction: row; /* Side-by-side layout */
+  align-items: flex-start;
+  text-align: left;
+  padding: 20px;
+  gap: 20px;
+  max-width: 100%; /* Prevent overflow */
+}
+
+.authors_section .box.expanded .image-container {
+  width: 150px; /* Larger photo size when expanded */
+  height: 150px;
+  margin: 0;
+}
+
+.authors_section .box.expanded .extra-info {
+  display: block; /* Display extra info when expanded */
+  font-size: 14px;
+  color: #333;
+}
+
+.authors_section .box.hidden {
+  display: none;
+}
+
+
+
+
+
 
 .contact_section {
   position: relative;
@@ -545,3 +677,4 @@ a:focus {
   width: 35px;
   margin-right: 8px;
 }
+
