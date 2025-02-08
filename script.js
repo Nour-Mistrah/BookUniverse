@@ -177,7 +177,7 @@ function displayBookDetails(bookId) {
                 <div class="left-section">
                     <div class="buttons-container">
                         <img src="${book.image}" alt="${book.title}">
-                        <a href="./pdfs/${book.id}.pdf" class="btn_download" download="${book.id}.pdf">Read Offline</a>
+                        <a href="./pdfs/${book.id}.pdf" class="btn_download" download="${book.id}.pdf">Download</a>
                         <span class="heart-icon fa fa-heart-o" id="heart-icon"></span>
                     </div>
                     <div id="star-container">
@@ -262,7 +262,7 @@ function displayBooks(query) {
                 <div class="left-section">
                     <div class="buttons-container">
                         <img src="${book.image}" alt="${book.title}">
-                        <a href="./pdfs/${book.id}.pdf" class="btn_download" download="${book.id}.pdf">Read Offline</a>
+                        <a href="./pdfs/${book.id}.pdf" class="btn_download" download="${book.id}.pdf">Download</a>
                         <span class="heart-icon fa fa-heart-o" id="heart-icon"></span>
                     </div>
                     <div id="star-container">
@@ -412,3 +412,4 @@ function addToMyFavoriteBooks(bookId) {
         alert("Book not found.");
     }
 }
+
