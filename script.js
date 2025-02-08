@@ -396,3 +396,20 @@ const bookId = getBookId();
 if (bookId) {
     displayBookDetails(bookId);
 }
+
+function addToMyFavoriteBooks(bookId) {
+    const book = books.find(b => b.id === bookId);
+    if (book) {
+        let favoritebooks = JSON.parse(localStorage.getItem('favoritebooks')) || [];
+        if (!favoritebooks.some(b => b.id === bookId)) {
+            favoritebooks.push(book);
+            localStorage.setItem('favoritebooks', JSON.stringify(favoritebooks));
+            alert(`${book.title} has been added to your favorite list.`);
+        } else {
+            alert(`${book.title} is already in your favorite list.`);
+        }
+    } else {
+        alert("Book not found.");
+    }
+}
+

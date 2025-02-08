@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>BookUniverse</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+  <header class="header_section">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/book-2.png" alt="logo" />
+          <span>
+            BookUniverse
+          </span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav ">
+
+              <li class="nav-item">
+                <a class="nav-link" href="shelf.html"> Shelf </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="favorites.html"> Favorites </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link active" href="Palestine1.html"> Palestine </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="signup.html"> Account </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact_section layout_padding">
+    <div class="container ">
+      <div class="heading_container" style="padding-top: 60px;">
+        <h2>
+          Get Started Now
+        </h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form id="signInForm" onsubmit="return handleSignIn(event)">
+            <input type="text" id="name" class="input-field" placeholder="Enter your name" required><br>
+            <input type="email" id="email" class="input-field" placeholder="Enter your email" required><br>
+            <input type="text" name="password" id=password class="input-field" placeholder="Password"
+              oninput="checkpassword()" />
+            <p id="validationerrors"> </p>
+            <button type="submit" class="sign-in-button">Sign In</button>
+
+          </form>
+        </div>
+
+        <script>
+          function handleSignIn(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (name && email && password) {
+              console.log("Name: " + name);
+              console.log("Email: " + email);
+              console.log("password: " + password);
+              window.location.href = "index.html";
+            } else {
+              alert("Please fill in both fields.");
+            }
+          }
+        </script>
+
+
+        <div class="col-md-6">
+          <div class="map_container">
+            <div class="map-responsive">
+              <iframe src="images/library-home-2.jpg" width="1000" height="400" frameborder="0"
+                style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function checkpassword() {
+      pwd = document.getElementById("password");
+
+      validationParagraph = document.getElementById("validationerrors");
+      if (pwd.value.length < 8) {
+        validationParagraph.innerText = "The password must be at least 8 character";
+      }
+      else validationParagraph.innerText = " Accepted"
+    }
+
+  </script>
+  <script>
+    const password1 = document.getElementById('password');
+    password1.addEventListener('input', function () {
+
+      let currentInput = password1.value;
+      let maskedInput = currentInput.replace(/./g, '*');
+      password1.value = maskedInput;
+    });
+  </script>
+
+
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="info_contact">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="images/location-white.png" alt="">
+            <span>
+              Lebanese University, Hadath
+            </span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <img src="images/telephone-white.png" alt="">
+            <span>
+              Call : +96103030303
+            </span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <img src="images/envelope-white.png" alt="">
+            <span>
+              bookuniverse7@gmail.com
+            </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-lg-3">
+          <div class="info_social">
+            <div>
+              <img src="images/facebook.png" alt="">
+              </a>
+            </div>
+            <div>
+              <img src="images/twitter.png" alt="">
+              </a>
+            </div>
+            <div>
+              <img src="images/instagram.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  </div>
+
+
+
+</body>
+
+</html>

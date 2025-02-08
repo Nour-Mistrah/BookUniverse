@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+  <title>BookUniverse</title>
+  <link rel="icon" href="images/pageicon.png" type="image/png">
+
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/favorites.css" rel="stylesheet" />
+
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header_section">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/book-2.png" alt="logo" />
+          <span>
+            BookUniverse
+          </span>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link" href="shelf.html"> Shelf</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="favorites.html"> Favorites </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link active" href="Palestine1.html"> Palestine </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html">Account </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                My Favorite Books
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="favorite-books" class="book-grid"></div>
+
+    <script>
+      function removeFromMyFavoriteBooks(bookId) {
+        let favoritebooks = JSON.parse(localStorage.getItem('favoritebooks')) || [];
+        favoritebooks = favoritebooks.filter(book => book.id !== bookId);
+        localStorage.setItem('favoritebooks', JSON.stringify(favoritebooks));
+        displayMyFavoriteBooks();
+        alert("Book has been removed from favorite list.");
+      }
+
+      function displayMyFavoriteBooks() {
+        const favoritebooks = JSON.parse(localStorage.getItem('favoritebooks')) || [];
+        const container = document.getElementById('favorite-books');
+        container.innerHTML = '';
+        if (favoritebooks.length > 0) {
+          favoritebooks.forEach(book => {
+            const bookDiv = document.createElement('div');
+            bookDiv.innerHTML = `
+                    <img src="${book.image}" alt="${book.title}" style="width: 100px; height: 150px;">
+                    <p class="authorsName">By ${book.author}</p><br>
+                    <button  onclick="removeFromMyFavoriteBooks('${book.id}')" >Remove from favorite list</button>
+                    
+                `;
+            container.appendChild(bookDiv);
+          });
+        } else {
+          container.innerHTML = "<p>No books in your favorite list.</p>";
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', displayMyFavoriteBooks);
+    </script>
+    </script>
+  </section>
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
