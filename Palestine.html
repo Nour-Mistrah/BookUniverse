@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Stairs</title>
+  <link href="css/Palestine.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <h1>Choose the images that matches your Humanity</h1>
+  <div class="mid">
+    <form id="myForm">
+      <div class="container3">
+        <div class="checkbox-container" onclick="toggleCheckbox(this)"> </div>
+        <h3> I Am A Human</h3>
+      </div>
+      <div class="container">
+
+
+
+        <img src="images/image1.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
+        <img src="images/image2.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
+        <img src="images/image3.jpg" class="image" data-is-stair="false" onclick="checkAnswer(this)">
+        <img src="images/image4.jpg" class="image" data-is-stair="false" onclick="checkAnswer(this)">
+        <img src="images/image5.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
+        <img src="images/image6.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
+        <img src="images/image7.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
+        <img src="images/image8.jpg" class="image" data-is-stair="false" onclick="checkAnswer(this)">
+        <img src="images/image9.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
+
+      </div>
+      <button type="submit" id="submitBtn" class="hidden" onclick="submitAnswers(event)">Verify</button><br><br><br>
+      <div id="message" class="hidden"></div>
+    </form>
+  </div>
+  <script>
+    function toggleCheckbox(element) {
+      element.classList.toggle('checked');
+    }
+  </script>
+  <script>
+
+
+    let selectedImages = 0;
+
+    function checkAnswer(img) {
+      if (img.classList.contains("selected")) return;
+      img.classList.add("selected");
+      selectedImages++;
+      img.style.border = "3px solid blue";
+      if (selectedImages > 0) {
+        document.getElementById("submitBtn").classList.remove("hidden");
+      }
+    }
+
+    function submitAnswers(event) {
+      event.preventDefault();
+      let correctAnswers = 0;
+      let message = document.getElementById("message");
+      message.classList.remove("hidden");
+      document.querySelectorAll(".image").forEach((image) => {
+        const isStair = image.getAttribute("data-is-stair") === "true";
+        if (image.classList.contains("selected")) {
+          if (isStair) {
+            image.style.border = "3px solid green";
+            correctAnswers++;
+          } else {
+            image.style.border = "3px solid red";
+          }
+        }
+      });
+
+
+      if (correctAnswers === selectedImages && selectedImages > 0) {
+        alert("You are  human you can visit our page.");
+        window.location.href = "Palestine1.html";
+      } else {
+        document.getElementById("message").textContent = "Failed to be human";
+
+      }
+    }
+
+
+
+  </script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
