@@ -397,6 +397,23 @@ if (bookId) {
     displayBookDetails(bookId);
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const bookId = getBookId();
+    if (bookId) {
+        displayBookDetails(bookId);
+    }
+
+
+    const heartIconButton = document.getElementById('heart-icon');
+    if (heartIconButton) {
+        heartIconButton.addEventListener('click', () => {
+            addToMyFavoriteBooks(bookId);
+        });
+    }
+});
+
 function addToMyFavoriteBooks(bookId) {
     const book = books.find(b => b.id === bookId);
     if (book) {
