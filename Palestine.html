@@ -21,15 +21,15 @@
 
 
 
-        <img src="images/image1.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
-        <img src="images/image2.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
-        <img src="images/image3.jpg" class="image" data-is-stair="false" onclick="checkAnswer(this)">
-        <img src="images/image4.jpg" class="image" data-is-stair="false" onclick="checkAnswer(this)">
-        <img src="images/image5.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
-        <img src="images/image6.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
-        <img src="images/image7.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
-        <img src="images/image8.jpg" class="image" data-is-stair="false" onclick="checkAnswer(this)">
-        <img src="images/image9.jpg" class="image" data-is-stair="true" onclick="checkAnswer(this)">
+        <img src="images/image1.jpg" class="image" data-is-human="true" onclick="checkAnswer(this)">
+        <img src="images/image2.jpg" class="image" data-is-human="true" onclick="checkAnswer(this)">
+        <img src="images/image3.jpg" class="image" data-is-human="false" onclick="checkAnswer(this)">
+        <img src="images/image4.jpg" class="image" data-is-human="false" onclick="checkAnswer(this)">
+        <img src="images/image5.jpg" class="image" data-is-human="true" onclick="checkAnswer(this)">
+        <img src="images/image6.jpg" class="image" data-is-human="true" onclick="checkAnswer(this)">
+        <img src="images/image7.jpg" class="image" data-is-human="true" onclick="checkAnswer(this)">
+        <img src="images/image8.jpg" class="image" data-is-human="false" onclick="checkAnswer(this)">
+        <img src="images/image9.jpg" class="image" data-is-human="true" onclick="checkAnswer(this)">
 
       </div>
       <button type="submit" id="submitBtn" class="hidden" onclick="submitAnswers(event)">Verify</button><br><br><br>
@@ -62,9 +62,9 @@
       let message = document.getElementById("message");
       message.classList.remove("hidden");
       document.querySelectorAll(".image").forEach((image) => {
-        const isStair = image.getAttribute("data-is-stair") === "true";
+        const isHuman = image.getAttribute("data-is-human") === "true";
         if (image.classList.contains("selected")) {
-          if (isStair) {
+          if (isHuman) {
             image.style.border = "3px solid green";
             correctAnswers++;
           } else {
